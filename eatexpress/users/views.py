@@ -4,6 +4,7 @@ from users.models import Profile, Order
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.db import transaction
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -33,8 +34,9 @@ def profile(request):
                                    instance=request.user.profile)
         
         if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
+            with transaction.atomic():
+                p_form.save()
+                u_form.save()
             messages.success(request, "Your account has been updated")
             return redirect('profile')
     else:
@@ -42,8 +44,8 @@ def profile(request):
         p_form = ProfileUpdateForm(instance=request.user.profile)
     context = {
         'title': 'Profile',
-        'u_form': u_form,
-        'p_form': p_form
+        'p_form': p_form,
+        'u_form': u_form
     }
     return render(request, 'users/profile.html', context)
 

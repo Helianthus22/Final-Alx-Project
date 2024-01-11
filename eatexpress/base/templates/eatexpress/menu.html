@@ -6,7 +6,7 @@
     
     <div class="container">
         <header>
-            <a href="{% url 'home' %}" style="text-decoration: none;"><h1 style="color: #786c28;">←EatExpress</h1></a>
+            <a href="{% url 'home' %}" style="text-decoration: none;"><h1 style="color: #464a4d86;">←BerryBlissBistro</h1></a>
             <div class="shopping">
                 <img src="{% static 'images/shopping.svg' %}">
                 <span class="quantity">0</span>
@@ -29,8 +29,6 @@
     </div>
 
     <script>
-
-
         fetch('/api/dishes/')
             .then(response=> response.json())
             .then(data => {
@@ -40,8 +38,6 @@
             .catch(error => {
                 console.error('Error fethching data:', error);
             });
-
-
         let openShopping = document.querySelector('.shopping');
         let closeShopping = document.querySelector('.closeShopping');
         let list = document.querySelector('.list');
@@ -163,7 +159,5 @@
             });
 
         }
-
-
     </script>
 </body>

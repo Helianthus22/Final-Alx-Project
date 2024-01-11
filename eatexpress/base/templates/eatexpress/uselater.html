@@ -12,7 +12,7 @@
         <div class="service-content">
             {% for profile in profile %}
                 <div class="inner-box">
-                    <img src="{% static 'user_auth/Iseg.jpg' %}" alt="">
+                    <img src="{% static 'user_auth/pp.jpg' %}" alt="">
                     <h2>{{ profile.date_joined|date:'F d, Y' }}</h2>
                     <p>{{ profile.address }}.</p>
                     <button class="btn">{{ profile.name}} {{ profile.surname }}</button>

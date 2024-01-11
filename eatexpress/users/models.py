@@ -18,8 +18,8 @@ class Profile(models.Model):
 
     
     def __str__(self):
-        return f"""This profile belongs to {self.user.profile.name} {self.user.profile.surname}. 
-            This user joined on {self.user.profile.date_joined}, 
+        return f"""This profile belongs to {self.name} {self.surname} 
+            This user joined on {self.date_joined}, 
             and has been an amaaazing customer ever since."""
     
 
@@ -36,6 +36,6 @@ class Profile(models.Model):
 class Order(models.Model):
     item_name = models.CharField(max_length=100)
     quantity = models.PositiveIntegerField()
-    price = price = models.PositiveIntegerField(
+    price = models.PositiveIntegerField(
         validators=[MaxValueValidator(99999)],
         help_text="Enter the price as an integer (maximum 99999).")
