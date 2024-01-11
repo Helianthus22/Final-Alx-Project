@@ -1,4 +1,4 @@
-This is the portfolio project Designed Freedom Iseghohimhen and Michael Daudu (Cohort 19, ALX-SE OCT-2023)
+This is the portfolio project Designed Daphne Nnadi (Cohort 11, ALX-SE JAN-2024)
 To run this project, you have to have python installed, as well as the libraries in the requirements.txt file.
 
 To install python, download from the official python website: https://www.python.org/downloads/
